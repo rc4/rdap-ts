@@ -3,10 +3,9 @@ on:
   pull_request:
   push:
     branches: [master]
-permissions:
-  contents: read
+
 jobs:
-  build:
+  checks:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -22,10 +21,6 @@ jobs:
       - name: Build
         run: pnpm build
 
-  check:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
       - name: Check formatting
         run: pnpm format:check
 
@@ -37,10 +32,6 @@ jobs:
           pnpm typecheck
           pnpm attw
 
-  test:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
       - name: Test
         run: pnpm rstest --coverage --coverage.reportOnFailure
 
