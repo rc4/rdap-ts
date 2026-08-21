@@ -1,7 +1,7 @@
 name: Release
 on:
   release:
-    types: [created, published, released]
+    types: [published]
   workflow_dispatch:
 
 permissions:
@@ -31,4 +31,4 @@ jobs:
         run: pnpm build
 
       - name: Publish
-        run: pnpm publish --access public --no-git-checks
+        run: pnpm publish --no-git-checks
