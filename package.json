@@ -2,11 +2,12 @@
   "name": "rdap-ts",
   "version": "0.1.0",
   "author": "rc4 <npm@rc4.io>",
-  "description": "TypeScript client for the Registration Data Access Protocol (RDAP)",
+  "description": "TypeScript client for the Registration Data Access Protocol (RDAP), the modern-day replacement for WHOIS.",
   "type": "module",
   "sideEffects": false,
-  "engines": {
-    "node": ">=20"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rc4/rdap-ts.git"
   },
   "exports": {
     ".": {
@@ -28,6 +29,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "engines": {
+    "node": ">=20"
+  },
   "keywords": [
     "rdap",
     "whois",
@@ -45,9 +49,7 @@
     "test": "rstest run",
     "test:watch": "rstest --watch",
     "test:coverage": "rstest run --coverage",
-    "attw": "attw --pack .",
-    "publint": "publint",
-    "check": "pnpm run format:check && pnpm run lint && pnpm run typecheck && pnpm run test:coverage && pnpm run build && pnpm run attw && pnpm run publint"
+    "attw": "attw --pack ."
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.5",
