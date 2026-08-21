@@ -1,0 +1,11 @@
+rules:
+  unpinned-uses:
+    config:
+      policies:
+        actions/*: ref-pin
+        github/*: ref-pin
+        1password/*: ref-pin
+        1Password/*: ref-pin
+  unpinned-tools:
+    remap:
+      severity: low
