@@ -1,6 +1,6 @@
 {
   "name": "rdap-ts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "rc4 <npm@rc4.io>",
   "description": "TypeScript client for the Registration Data Access Protocol (RDAP), the modern-day replacement for WHOIS.",
   "type": "module",
