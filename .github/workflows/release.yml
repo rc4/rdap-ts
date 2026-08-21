@@ -1,0 +1,30 @@
+name: Release
+on:
+  release:
+    types: [created]
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Setup
+        uses: pnpm/setup@v2
+        with:
+          version: ^11.0.0
+          runtime: node@lts
+          cache: false
+
+      - name: Build
+        run: pnpm build
+
+      - name: Publish
+        run: pnpm publish
